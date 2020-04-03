@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
 
 function Item(props) {
+  // Récupération des données passées par l'API
   const prev = props.item;
   const [meteo, setMeteo] = useState('');
   const [temp, setTemps] = useState('');
@@ -15,7 +16,7 @@ function Item(props) {
     setTime(prev.dt_txt.split(" ")[1]);
     setImg(prev.weather[0].main);
   });
-
+  // Mise en forme de la date
   let jour = new Date(day);
   const month = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
   let mois = month[jour.getUTCMonth()];
