@@ -4,31 +4,7 @@ import { Location, Permissions} from 'expo';
 
 function Home({navigation}) {
 
-    state = {
-        location,
-        errorMessage: '',
-    }
-
-    function componentWillMount(){
-        this._getLocation();
-    }
-
-    async function _getLocation(){
-        const { status } = await Permissions.askAsync(Permissions.LOCATION);
-        if(status !== 'granted'){
-            console.log('PERMISSION NON AUTORISEE');
-
-            this.setState({
-                errorMessage: 'PERMISSION PAS AUTORISEE',
-            });
-        }
-
-        const userLocation = await Location.getCurrentPositionAsync();
-        this.setState({
-            location
-        });
-    }
-
+    // Récupération de la date
     let date = new Date();
     const week = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     const month = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
@@ -38,7 +14,7 @@ function Home({navigation}) {
 
     const [heures, setHeures] = useState('');
     const [minutes, setMinutes] = useState('');
-
+    // Mise à jour de l'heure
     useEffect(() => {
         setInterval(function heure(){
             let h = new Date().getHours();
