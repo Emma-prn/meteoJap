@@ -28,7 +28,7 @@ function Home({navigation}) {
         }, 100);
     });
     // Utilisation de l'API
-    const key = 'cc2cf02a04b3fd515b1cc005bb05adf7';
+    const key = 'token';
     const ville = 'Neaufles-Saint-Martin';
     const [city, setCity] = useState('');
     const [meteo, setMeteo] = useState('');
