@@ -4,7 +4,7 @@ import Item from './Item';
 
 function Previsions(props) {
   // Utilisation de l'API
-  const key = 'cc2cf02a04b3fd515b1cc005bb05adf7';
+  const key = 'token';
   const ville = 'Neaufles-Saint-Martin';
   const [hour, setHour] = useState('');
   useEffect(() => {
